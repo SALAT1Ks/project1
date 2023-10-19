@@ -42,3 +42,23 @@ button3 = Button(root, text='Начать 2(RUS)', font=40, command=proizviRUS)
 button3.pack(side=BOTTOM, pady=40)
 
 root.mainloop()
+with open("C:\\Users\\oppoe\\Downloads\\27-168a (1).txt") as f:
+    n, k = map(int, (f.readline()).split())
+    sp = [int(x) for x in f]
+    maxxx = max(sp)
+    maxx = max(sp)
+    if sp.index(maxx) + k > len(sp):
+        maxx = max(x for x in sp if x != max(sp))
+
+    maxx2 = max(sp[sp.index(maxx)+k+1:])
+    if sp.index(maxx2) + k > len(sp[sp.index(maxx2):]):
+        maxx2 = max(x for x in sp if x != max(sp[sp.index(maxx2):]))
+    maxx3 =max(sp[sp.index(maxx2):])
+
+print((maxx*maxx2*maxx3)%(10**6+1))
+print(sp.index(maxx))
+print(sp.index(maxx2))
+print(sp)
+print(sp[sp.index(maxx)+k+1:])
+print(sp[sp.index(maxx2):])
+print(maxx3)
